@@ -221,6 +221,11 @@ header h1{
 .customer-taglist{
     padding: 0;
     margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    max-height: 96px;
+    overflow: hidden;
 }
 .customer-taglist li{
     display: inline-block;
@@ -585,4 +590,57 @@ span~#tab>div:first-of-type,
 }
 .page li.active a{
     background-color: #dfdfdf;
+}
+.tool {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 8px;
+}
+.tool li{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    margin-left: 16px;
+}
+.tool a{
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    color: transparent;
+    font: 0/0 a;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0 2px 2px 0, rgba(0, 0, 0, 0.12) 0 3px 1px -2px, rgba(0, 0, 0, 0.2) 0 1px 5px 0px;
+}
+.tool a:hover{
+    background-color: #1B6F15;
+    color: white;
+}
+.tool a:hover::before{
+    filter: brightness(0) invert(1);
+}
+
+
+.tool a::before{
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tool a.search::before{
+    background-image: url('../images/icon-search.svg');
+}
+.tool a.filter::before{
+    background-image: url('../images/icon-filter.svg');
 }
